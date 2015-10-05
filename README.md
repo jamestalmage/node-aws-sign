@@ -15,7 +15,12 @@ var opts = {
 	method: 'PUT',
 	host: 'johnsmith.s3.amazonaws.com',
 	path: '/photos/puppy.jpg',
-	headers: { ... },
+	headers: { 
+		'content-type': 'image/jpeg',
+		'date': 'Tue, 27 Mar 2007 21:15:45 +0000',
+		'content-md5': '...',
+		'x-amz-???': '...'
+	},
 	... // Other request options, ignored by AwsSign.
 };
 signer.sign(opts);
